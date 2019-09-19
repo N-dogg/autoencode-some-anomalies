@@ -50,5 +50,5 @@ class autoencoder(object):
     def predict(self):
         pass
 
-    def load(self):
-        pass
+    def load_model(self, path):
+        self.autoencoder = load_model(path)
