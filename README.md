@@ -1,17 +1,17 @@
-﻿Anomaly Detection Using Financial Ratios
+﻿Anomaly Detection Using Accounting Journals
 ===================
 
 
 ####Coding and testing the commercial applications of academic papers and cutting edge analytical techniques.
 ------------------------------------------------------------------------
 
-**Paper 1:** *A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise*
+**Paper 1:** *Detection of Anomalies in Large-Scale Accounting Data using Deep Autoencoder Networks*
 
-**Abstract:** Clustering algorithms are attractive for the task of class identification in spatial databases. However, the application to large spatial databases rises the following requirements for clustering algorithms: minimal requirements of domain knowledge to determine the input parameters, discovery of clusters with arbitrary shape and good efficiency on large databases. The well-known clustering algorithms offer no solution to the combination of these requirements. In this paper, we present the new clustering algorithm DBSCAN relying on a density-based notion of clusters which is designed to discover clusters of arbitrary shape. DBSCAN requires only one input parameter and supports the user in determining an appropriate value for it. We performed an experimental evaluation of the effectiveness and efficiency of DBSCAN using synthetic data and real data of the SEQUOIA 2000 benchmark. The results of our experiments demonstrate that (1) DBSCAN is significantly more effective in discovering clusters of arbitrary shape than the well-known algorithm CLAR-ANS, and that (2) DBSCAN outperforms CLARANS by a factor of more than 100 in terms of efficiency.
+**Abstract:** Learning to detect fraud in large-scale accounting data is one of the long-standing challenges in financial statement audits or fraud investigations. Nowadays, the majority of applied techniques refer to handcrafted rules derived from known fraud scenarios. While fairly successful, these rules exhibit the drawback that they often fail to generalize beyond known fraud scenarios and fraudsters gradually find ways to circumvent them. To overcome this disadvantage and inspired by the recent success of deep learning we propose the application of deep autoencoder neural networks to detect anomalous journal entries. We demonstrate that the trained network's reconstruction error obtainable for a journal entry and regularized by the entry's individual attribute probabilities can be interpreted as a highly adaptive anomaly assessment. Experiments on two real-world datasets of journal entries, show the effectiveness of the approach resulting in high f1-scores of 32.93 (dataset A) and 16.95 (dataset B) and less false positive alerts compared to state of the art baseline methods. Initial feedback received by chartered accountants and fraud examiners underpinned the quality of the approach in capturing highly relevant accounting anomalies.
 
-**Paper 2:** *Clustering-based Anomaly Detection for Microservices*
+**Paper 2:** *Detection of Accounting Anomalies in the Latent Space using Adversarial Autoencoder Neural Networks*
 
-**Abstract:** Anomaly detection is an important step in the management and monitoring of data centers and cloud computing platforms. The ability to detect anomalous virtual machines before real failures occur results in reduced downtime while operations engineers urgently recover malfunctioning virtual machines, efficient root cause analysis, and improved customer optics in the event said malfunction lead to an outage. Virtual machines could fail at any time, whether in a lab or production system. If there is no anomaly detection system, and a virtual machine in a lab environment fails, the QA and DEV team will have to switch to another environment while the OPS team fixes the failure. The potential impact of failing to detect anomalous virtual machines can result in financial ramifications, both when developing new features and servicing existing ones. This paper presents a model that can efficiently detect anomalous virtual machines both in production and testing environments.
+**Abstract:** The detection of fraud in accounting data is a long-standing challenge in financial statement audits. Nowadays, the majority of applied techniques refer to handcrafted rules derived from known fraud scenarios. While fairly successful, these rules exhibit the drawback that they often fail to generalize beyond known fraud scenarios and fraudsters gradually find ways to circumvent them. In contrast, more advanced approaches inspired by the recent success of deep learning often lack seamless interpretability of the detected results. To overcome this challenge, we propose the application of adversarial autoencoder networks. We demonstrate that such artificial neural networks are capable of learning a semantic meaningful representation of real-world journal entries. The learned representation provides a holistic view on a given set of journal entries and significantly improves the interpretability of detected accounting anomalies. We show that such a representation combined with the networks reconstruction error can be utilized as an unsupervised and highly adaptive anomaly assessment. Experiments on two datasets and initial feedback received by forensic accountants underpinned the effectiveness of the approach.
 
 ----------
 
@@ -19,9 +19,9 @@
 Documents
 -------------
 
-[A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise](https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf)
+[Detection of Anomalies in Large-Scale Accounting Data using Deep Autoencoder Networks](https://arxiv.org/pdf/1709.05254.pdf)
 
-[Clustering-based Anomaly Detection for Microservices](https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf)
+[Detection of Accounting Anomalies in the Latent Space using Adversarial Autoencoder Neural Networks](https://arxiv.org/pdf/1908.00734.pdf)
 
 
 ----------
