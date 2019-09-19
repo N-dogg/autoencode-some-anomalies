@@ -31,7 +31,7 @@ Hypotheses
 -------------------
  - Accounting journals hold all transaction data for an entity
  - Deep autoencoder network will be effective at identifying both global and local accounting anomalies
- - Solution can perform better than current auditing procedures in terms of 1) Identifying all anomalies 2) minimising the testing of      normal transactions.
+ - Solution can perform better than current auditing procedures in terms of 1) Identifying all anomalies 2) Minimising the testing of      normal transactions.
 
 ----------
 
