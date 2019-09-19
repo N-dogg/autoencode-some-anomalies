@@ -2,7 +2,7 @@
 ===================
 
 
-####Coding and testing the commercial applications of academic papers and cutting edge analytical techniques.
+#### Coding and testing the commercial applications of academic papers and cutting edge analytical techniques.
 ------------------------------------------------------------------------
 
 **Paper 1:** *Detection of Anomalies in Large-Scale Accounting Data using Deep Autoencoder Networks*
