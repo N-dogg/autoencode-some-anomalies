@@ -1,0 +1,54 @@
+from keras.layers import Input, Dense
+from keras.models import Model, load_model
+from keras.callbacks import ModelCheckpoint
+from keras import regularizers
+
+encoding_dim = 200
+hidden_dim = int(encoding_dim/2)
+learning_rate = 1e-3
+
+class autoencoder(object):
+
+    def __init__(self, input_dim):
+        self.input_dim = input_dim
+        self.save_path = "autoencoder.h5"
+        self.input = Input(shape = (self.input_dim, ))
+        self.encoder = Dense(encoding_dim, activation = 'relu', activity_regularizer= regularizers.l1(learning_rate))(self.input)
+        self.encoder = Dense(hidden_dim, activation='relu')(self.encoder)
+        self.decoder = Dense(hidden_dim, activation='relu')(self.encoder)
+        self.decoder = Dense(encoding_dim, activation='relu')(self.decoder)
+        self.decoder = Dense(encoding_dim, activation='relu')(self.decoder)
+        self.output = Dense(self.input_dim, activation='sigmoid')(self.decoder)
+
+        self.autoencoder = Model(inputs = input_layer, outputs = decoder)
+
+        self.autoencoder.compile(metrics = ['binary_accuracy'], loss = 'binary_crossentropy',
+                    optimizer = 'adam')
+
+
+    def summary(self):
+        print(self.autoencoder.summary())
+
+    def set_save_path(self, path):
+        self.save_path = path
+
+    def fit(self, train, valid, n_epochs = 100, batch_size = 500):
+        cp = ModelCheckpoint(filepath=self.save_path,
+                               save_best_only=True,
+                               verbose=0)
+
+        history = self.autoencoder.fit(train, train,
+                            epochs=n_epochs,
+                            batch_size=batch_size,
+                            shuffle=True,
+                            validation_data=(valid, valid),
+                            verbose=1,
+                            callbacks=[cp]).history
+
+        return history
+
+    def predict(self):
+        pass
+
+    def load(self):
+        pass
