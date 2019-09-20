@@ -9,14 +9,6 @@ from sklearn.preprocessing import StandardScaler
 
 from model import autoencoder
 
-#data import
-#preprocessing
-#plotting
-#error calculation
-#anything not model or train
-
-#run
-
 def preprocessing(df):
     #onehot encoding
     for col in df:
