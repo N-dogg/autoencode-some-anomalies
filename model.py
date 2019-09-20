@@ -1,3 +1,5 @@
+import pandas as pd
+
 from keras.layers import Input, Dense
 from keras.models import Model, load_model
 from keras.callbacks import ModelCheckpoint
@@ -10,7 +12,7 @@ class autoencoder(object):
 
     def __init__(self, input_dim, learning_rate = 1e-3):
         self.input_dim = input_dim
-        self.save_path = "autoencoder_v4.h5"
+        self.save_path = "autoencoder_v1.h5"
         self.learning_rate = learning_rate
         self.input = Input(shape = (self.input_dim, ))
         self.encoder = Dense(encoding_dim, activation = 'relu', activity_regularizer= regularizers.l1(learning_rate))(self.input)
@@ -26,12 +28,15 @@ class autoencoder(object):
                     optimizer = 'adam')
 
     def summary(self):
+        #print summary of the model
         self.autoencoder.summary()
 
     def set_save_path(self, path):
+        #change the save path
         self.save_path = path
 
     def fit(self, train, valid, n_epochs = 100, batch_size = 500):
+        #train the model & save the results
         cp = ModelCheckpoint(filepath=self.save_path,
                                save_best_only=True,
                                verbose=0)
@@ -47,7 +52,9 @@ class autoencoder(object):
         return history
 
     def predict(self, x):
-        return pd.DataFrame(autoencoder.predict(x))
+        #predict function
+        return pd.DataFrame(self.autoencoder.predict(x))
 
     def load_model(self, path):
+        #load a pre-trained model
         self.autoencoder = load_model(path)

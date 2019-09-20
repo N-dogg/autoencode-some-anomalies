@@ -42,8 +42,8 @@ def preprocessing(df):
 
 def train_plot(training_data):
     #plot the loss vs. training epoch
-    plt.plot(history['loss'], linewidth=2, label='Train')
-    plt.plot(history['val_loss'], linewidth=2, label='Valid')
+    plt.plot(training_data['loss'], linewidth=2, label='Train')
+    plt.plot(training_data['val_loss'], linewidth=2, label='Valid')
     plt.legend(loc='upper right')
     plt.title('Model Loss')
     plt.ylabel('Loss')
@@ -73,7 +73,7 @@ def reconstruction_loss(x, x_pred, label):
 
 def error_plot(df_error):
     #plot the reconstruction loss for each journal - highlighting the errors
-    groups = error_df_test.groupby('True_class')
+    groups = df_error.groupby('True_class')
     fig, ax = plt.subplots()
 
     for name, group in groups:
@@ -84,7 +84,6 @@ def error_plot(df_error):
     plt.ylabel("Reconstruction error")
     plt.xlabel("Data point index")
     plt.show();
-
 
 
 if __name__ == '__main__':
@@ -101,3 +100,11 @@ if __name__ == '__main__':
     #train the model
     output = model.fit(df_train, df_valid)
     train_plot(output)
+
+    #predict
+    model.load_model('autoencoder_v1.h5')
+    x_pred = model.predict(df_test)
+
+    #calculate and plot the reconstruction loss
+    error = reconstruction_loss(df_test, x_pred, df_test_y)
+    error_plot(error)
