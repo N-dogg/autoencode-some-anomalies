@@ -37,6 +37,8 @@ class autoencoder(object):
 
     def fit(self, train, valid, n_epochs = 100, batch_size = 500):
         #train the model & save the results
+        
+        
         cp = ModelCheckpoint(filepath=self.save_path,
                                save_best_only=True,
                                verbose=0)
