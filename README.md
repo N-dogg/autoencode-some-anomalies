@@ -29,6 +29,8 @@ Documents
 
 Hypotheses
 -------------------
+Overall goal is to develop a solution that can identify anomalies in financial accounting journals. The following are the projects hypotheses:
+
  - Accounting journals hold all transaction data for an entity
  - Deep autoencoder network will be effective at identifying both global and local accounting anomalies
  - Solution can perform better than current auditing procedures in terms of 1) Identifying all anomalies 2) Minimising the testing of      normal transactions.
@@ -37,7 +39,15 @@ Hypotheses
 
 Process
 -------------
+We note that for this test we have not used all of the raw journal outputs that are generated from most common ERP systems. Instead we have only used a small sample including GL account number, account class, entry date, period, preparer and source. Each feature was one-hot-encoded, and the total population was split into a training, testing and validation set prior to training.
 
+Drawing from paper 1, a group of global accounting anomalies, those exhibiting ususual or rare individual attributes, and global accounting anomalies, those exhibiting a combination of rare attributes, were created. These were appended to the testing data-set as we want the allow the model to only learn the 'normal' opperations of the business.
+
+Four models of ranging depth were trained, see example architecture below:
+
+(https://user-images.githubusercontent.com/43980002/65396497-1a02fd00-ddea-11e9-8697-14ccfb710f41.JPG)
+
+Trained models were then used to predict the outcome of the test set. A reconstruction error was obtained for each sample and plotted to visually assess the results of the model.
 
 
 ----------
@@ -46,10 +56,17 @@ Process
 Example Results Screens
 --------------------
 
+
+
 ----------
 
 Next Steps
 --------------------
+
+Considerations for further iterations include:
+- Journals are usually posted in batches so should potentially be analysed accordingly instead of line-by-line in the current solution
+- The value and magnitude of the journal posted should be included in the analysis, but further consideration needs to be given around how its inclusion will affect a model solely focused on categorical variables.
+- Quantitative evaluation threshold for further investigation of journals.
 ----------
 
 Requirements
