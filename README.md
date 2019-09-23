@@ -78,12 +78,12 @@ Considerations for further iterations include:
 Requirements
 --------------------
 
-pandas
-numpy
-matplotlib
-sklearn
-seaborn
-math
-keras
+pandas  
+numpy  
+matplotlib  
+sklearn  
+seaborn  
+math  
+keras  
 
 ----------
