@@ -60,6 +60,9 @@ The following plot showing decreasing model loss against training epochs suggest
 
 ![395-200-395](https://user-images.githubusercontent.com/43980002/65396617-6dc21600-ddeb-11e9-9679-8a235cb4046d.png)
 
+With auditing procedures, there needs to be a reasonable guarantee of full issue detection without overburdening the client with uneccessary testing. The following plot of the reconstruction loss against each training sample suggests the model is effective at seperating the normal operations of the business with potential anomalies. 
+
+![download (1)](https://user-images.githubusercontent.com/43980002/65396677-1f614700-ddec-11e9-9bbe-562f1c8d99eb.png)
 
 ----------
 
