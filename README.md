@@ -45,7 +45,8 @@ Drawing from paper 1, a group of global accounting anomalies, those exhibiting u
 
 Four models of ranging depth were trained, see example architecture below:
 
-(https://user-images.githubusercontent.com/43980002/65396497-1a02fd00-ddea-11e9-8697-14ccfb710f41.JPG)
+![Capture](https://user-images.githubusercontent.com/43980002/65396497-1a02fd00-ddea-11e9-8697-14ccfb710f41.JPG)
+
 
 Trained models were then used to predict the outcome of the test set. A reconstruction error was obtained for each sample and plotted to visually assess the results of the model.
 
@@ -55,7 +56,9 @@ Trained models were then used to predict the outcome of the test set. A reconstr
 
 Example Results Screens
 --------------------
+The following plot showing decreasing model loss against training epochs suggest successful training runs and model improvement.
 
+![395-200-395](https://user-images.githubusercontent.com/43980002/65396617-6dc21600-ddeb-11e9-9679-8a235cb4046d.png)
 
 
 ----------
@@ -71,4 +74,13 @@ Considerations for further iterations include:
 
 Requirements
 --------------------
+
+pandas
+numpy
+matplotlib
+sklearn
+seaborn
+math
+keras
+
 ----------
